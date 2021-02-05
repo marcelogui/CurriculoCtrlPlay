@@ -24,25 +24,32 @@ body {
 }
 
 #cv-main{
-    margin-top: 8rem;
-    margin-bottom: 10rem;
+    /* margin-top: 8rem;
+    margin-bottom: 10rem; */
+    margin: 8rem 3rem 10rem;
     display: grid;
-    grid-template-columns: repeat(3, 400px);
-    gap: 3rem;
-    font-size: 1.4rem;
+    gap: 2.5%;
+    /* grid-template-columns: 100%; */
+
+    font-size: 1.1rem;
+    max-width: 90rem;
+
 }
 
 .cv-section{
+    max-width: 60rem;
     border: 2px solid #CCC;
     display: flex;
     flex-direction: column;
     font-family: "Roboto Mono", sans-serif;
     font-weight: 300;
-    padding: 3rem;
+    padding: 2.5rem;
+    justify-content: space-around;
+    height: fit-content;
 }
 
 .cv-section p {
-    line-height: 2rem;
+    line-height: 1.5rem;
     margin-bottom: 5rem;
 }
 
@@ -51,11 +58,7 @@ body {
     line-height: 4rem;
 }
 
-.section-big {
-    grid-column: span 2;
-}
-
-/* .section-small {
+.section-small {
     background: repeating-linear-gradient(
         45deg,
         #ffffff,
@@ -65,18 +68,78 @@ body {
         #ffffff 5px,
         #ffffff 10px
         );
-} */
+}
+
+.cv-section h2, .cv-section h3{
+    font-weight: 400;
+}
+
+.cv-section h2{
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.cv-section h3{
+    font-size: 1.4rem;
+    margin-bottom: 0.7rem;
+}
+
+#personal-data {
+    font-weight: 400;
+    font-size: 1.4rem;
+    font-family: 'Lato';
+}
+
+#personal-data ul li + li {
+    margin-top: 1.5rem;
+}
+
+.cv-section > ul {
+    display: flex;
+}
+
+.cv-section > ul li {
+    margin-right: 0.75rem;
+}
+
+.cv-section > ul li::after {
+    content: '|';
+    margin-left: 0.75rem;
+}
+
+.cv-section p, .cv-section ul {
+    margin-bottom: 1.3rem;
+}
+
+#img-self-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+#img-self-container img{
+    display: block;
+    width: 100%;
+    max-width: 40rem;
+    border-radius: 50%;
+}
 
 .icon-container {
-    margin-right: auto;
+    font-size: 2.5rem;
+    width: fit-content;
 }
 
 .big-icon {
-    font-size: 6rem;
-    margin-bottom: 1.6rem;
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
 }
 
-.icon-container i::after{
+.small-icon {
+    font-size: 2.25rem;
+}
+
+.cv-section > .icon-container i::after{
+
     display: block;
     width: 50%;
     height: 1px;
@@ -84,34 +147,56 @@ body {
     content: '';
 }
 
-.cv-section h2{
-    font-size: 2.4rem;
-    margin-bottom: 1.6rem;
+.links-download {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
 }
 
-.small-icon {
-    font-size: 2rem;
-    margin-bottom: 1.2rem;
+.links-download ul {
+    display: flex;
 }
 
-.cv-section h3{
-    font-size: 1.2em;
-    margin-bottom: 12px;
+.links-download li{
+    margin-right: 1rem;
 }
 
-.cv-section h2, .cv-section h3{
-    font-weight: 400;
+/* Mobile First -> Primeiro dispositivos móveis */
+
+@media (min-width: 768px) {
+    :root{
+        font-size: 0.625em;
+    }
+    #cv-main {
+        grid-template-columns: 32% 32% 32%;
+        gap: 2%;
+        margin: 8rem 2rem 10rem;
+    }
+
+    .section-big {
+        grid-column: span 2;
+    }
+
+    .cv-section {
+        order: 2;
+        max-width: 90rem;
+    }
+
+    .cv-section:nth-child(2) {
+        order: 1;
+    }
+
+}
+@media (min-width: 990px) {
+    :root{
+        font-size: 0.8em;
+    }
 }
 
-.cv-section p {
-    margin-bottom: 1.2rem;
+@media (min-width: 1400px) {
+    :root{
+        font-size: 0.8em;
+    }
 }
 
 
-
-
-
-#img-self-container img{
-    width: 100%;
-    border-radius: 50%;
-}
